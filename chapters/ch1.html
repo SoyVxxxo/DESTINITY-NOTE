@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capítulo 1 — La primera mirada</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/grain.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="theme-dark">
+  <!-- Header con navegación -->
+  <header class="site-header">
+    <h1 class="logo">DESTINY NOTE</h1>
+    <nav class="nav">
+      <a href="../prologo.html">Prólogo</a>
+      <a href="ch1.html" class="active">Capítulo 1</a>
+      <a href="ch2.html">Capítulo 2</a>
+      <a href="ch3.html">Capítulo 3</a>
+      <a href="ch4.html">Capítulo 4</a>
+      <a href="ch5.html">Capítulo 5</a>
+      <a href="../epilogue.html">Epílogo</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="hero">
+    <article class="frame">
+      <h2 class="title">Capítulo 1 — La primera mirada</h2>
+      <p class="lead">
+        El cuaderno abrió su primera página y escribió solo una frase:
+        <em>“Cuando te vi, el invierno se volvió verano.”</em>
+      </p>
+
+      <p>
+        Era diciembre de 2026. Alejandro tenía 20 años, Venezuela 18. La ciudad estaba envuelta en luces
+        festivas, pero ninguna brillaba tanto como el instante en que sus miradas se cruzaron.
+        El mundo siguió su curso: la gente caminaba, los relojes avanzaban, las luces titilaban.
+        Sin embargo, para ellos todo se detuvo. Fue como si el universo hubiera contenido la
+        respiración para observar ese primer encuentro.
+      </p>
+
+      <p>
+        No hubo palabras, ni promesas, ni gestos grandilocuentes. Solo un cruce de ojos que derrumbó
+        las murallas del tiempo. En ese momento, el cuaderno oscuro, testigo silencioso, registró
+        el recuerdo con tinta invisible: la chispa que encendió una historia que no se apagaría.
+      </p>
+
+      <p>
+        Venezuela sonrió con timidez, como quien guarda un secreto que aún no puede ser revelado.
+        Él, sorprendido, sintió que la vida le entregaba una página en blanco para escribir algo nuevo.
+        La diferencia de edades no importaba; lo que contaba era la sincronía de dos almas que se
+        reconocían en medio del invierno.
+      </p>
+
+      <p>
+        El viento sopló suavemente, como si quisiera llevarse consigo las dudas, dejando solo la
+        certeza de que ese encuentro no era casualidad. El cuaderno parecía susurrar:
+        “Este es el inicio. No lo olviden.”
+      </p>
+
+      <!-- Frase final oculta -->
+      <blockquote id="finalQuote" class="typed hidden">
+        «No hacía falta luz. Bastaba tu sonrisa.»
+      </blockquote>
+
+      <!-- Botón para revelar la frase -->
+      <button class="ritual-btn" id="revealBtn">Revelar frase</button>
+
+      <!-- Botón para continuar al siguiente capítulo -->
+      <button class="ritual-btn" onclick="location.href='ch2.html'">Continuar</button>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <small>Capítulo 1 — Memoria imborrable.</small>
+  </footer>
+
+  <!-- Script para efecto de tipado -->
+  <script>
+    const revealBtn = document.getElementById('revealBtn');
+    const finalQuote = document.getElementById('finalQuote');
+
+    revealBtn.addEventListener('click', () => {
+      finalQuote.classList.remove('hidden');
+      typeLine(finalQuote.textContent);
+    });
+
+    function typeLine(text) {
+      finalQuote.textContent = "";
+      let i = 0;
+      const speed = 28;
+      const interval = setInterval(() => {
+        finalQuote.textContent += text[i];
+        i++;
+        if (i >= text.length) clearInterval(interval);
+      }, speed);
+    }
+  </script>
+</body>
+</html>

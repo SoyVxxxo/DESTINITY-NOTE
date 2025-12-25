@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capítulo 5 — El primer Año Nuevo juntos</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/grain.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="theme-dark">
+  <!-- Header con navegación -->
+  <header class="site-header">
+    <h1 class="logo">DESTINY NOTE</h1>
+    <nav class="nav">
+      <a href="../prologo.html">Prólogo</a>
+      <a href="ch1.html">Capítulo 1</a>
+      <a href="ch2.html">Capítulo 2</a>
+      <a href="ch3.html">Capítulo 3</a>
+      <a href="ch4.html">Capítulo 4</a>
+      <a href="ch5.html" class="active">Capítulo 5</a>
+      <a href="../epilogue.html">Epílogo</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="hero">
+    <article class="frame">
+      <h2 class="title">Capítulo 5 — El primer Año Nuevo juntos</h2>
+      <p class="lead">
+        La noche del 31 de diciembre de 2027 se convirtió en un escenario único. Era la primera vez
+        que Alejandro y Venezuela recibían el Año Nuevo juntos, y el cuaderno oscuro estaba allí, abierto,
+        esperando registrar un recuerdo que sería eterno.
+      </p>
+
+      <p>
+        La ciudad vibraba con música, risas y fuegos artificiales que pintaban el cielo de colores.
+        Pero para ellos, el verdadero espectáculo estaba en la intimidad de sus miradas. Alejandro,
+        con 21 años, y Venezuela, con 19, sabían que ese instante era más que una celebración: era la
+        confirmación de que el destino los había unido para compartir cada comienzo.
+      </p>
+
+      <p>
+        El reloj marcaba los últimos segundos del año. La multitud contaba en voz alta, pero ellos
+        lo hacían en silencio, mirándose como si fueran los únicos en el mundo. El cuaderno parecía
+        latir con cada número, como si también esperara la llegada del nuevo año.
+      </p>
+
+      <p>
+        —“¿Qué deseas para este año?” —preguntó Venezuela, con los ojos brillando como estrellas.  
+        —“Que cada día sea contigo, y que nunca olvidemos que este destino es nuestro” —respondió él.  
+      </p>
+
+      <p>
+        Cuando el reloj marcó la medianoche, los fuegos artificiales iluminaron el cielo y el cuaderno
+        se llenó de luz. No era solo el inicio de un nuevo año, era el inicio de una nueva etapa en su
+        historia. El cuaderno registró la promesa silenciosa: que cada Año Nuevo sería un recordatorio
+        de que estaban juntos, y que nada podría romper ese lazo.
+      </p>
+
+      <p>
+        El viento trajo consigo un murmullo invisible, como si el universo mismo celebrara con ellos.
+        El cuaderno cerró sus páginas con un resplandor, dejando grabada una frase que sería imposible
+        olvidar.
+      </p>
+
+      <!-- Frase final oculta -->
+      <blockquote id="finalQuote" class="typed hidden">
+        «El primer amanecer del año nos encontró juntos, y así será por todos los que vendrán.»
+      </blockquote>
+
+      <!-- Botón para revelar la frase -->
+      <button class="ritual-btn" id="revealBtn">Revelar frase</button>
+
+      <!-- Botón para continuar al epílogo -->
+      <button class="ritual-btn" onclick="location.href='../epilogue.html'">Continuar</button>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <small>Capítulo 5 — El primer Año Nuevo juntos, un comienzo eterno.</small>
+  </footer>
+
+  <!-- Script para efecto de tipado -->
+  <script>
+    const revealBtn = document.getElementById('revealBtn');
+    const finalQuote = document.getElementById('finalQuote');
+
+    revealBtn.addEventListener('click', () => {
+      finalQuote.classList.remove('hidden');
+      typeLine(finalQuote.textContent);
+    });
+
+    function typeLine(text) {
+      finalQuote.textContent = "";
+      let i = 0;
+      const speed = 28;
+      const interval = setInterval(() => {
+        finalQuote.textContent += text[i];
+        i++;
+        if (i >= text.length) clearInterval(interval);
+      }, speed);
+    }
+  </script>
+</body>
+</html>

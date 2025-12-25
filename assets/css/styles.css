@@ -1,0 +1,234 @@
+:root {
+  --bg: #0a0a0a;
+  --fg: #f2f2f2;
+  --muted: #cfd2d6;
+  --accent: #b11226;
+  --silver: #8e9297;
+  --frame: #1a1a1a;
+  --font-title: "Spectral", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-note: "IBM Plex Mono", monospace;
+}
+
+/* Base */
+html { font-size: 18px; }
+@media (min-width: 768px) { html { font-size: 16px; } }
+@media (min-width: 1200px) { html { font-size: 15px; } }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(6px);
+  background: rgba(10,10,10,.7);
+  border-bottom: 1px solid #151515;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: .8rem 1rem;
+}
+.logo {
+  font-family: var(--font-title);
+  font-weight: 700;
+  letter-spacing: .08em;
+  font-size: 1.4rem;
+}
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: .8rem;
+  padding: .4rem .6rem;
+  border-radius: 6px;
+  transition: color .2s ease, background .2s ease;
+}
+.nav a:hover, .nav a.active {
+  color: var(--fg);
+  background: #171717;
+}
+
+/* Hero frame */
+.hero {
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+}
+.frame {
+  width: min(880px, 92vw);
+  border: 1px solid #222;
+  background: linear-gradient(180deg, rgba(25,25,25,.6), rgba(15,15,15,.8));
+  box-shadow: 0 40px 80px rgba(0,0,0,.6), inset 0 0 120px rgba(0,0,0,.35);
+  padding: 1.6rem;
+  position: relative;
+  border-radius: 12px;
+}
+.frame::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1px dashed #1f1f1f;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+/* Titles & text */
+.title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 2rem;
+  margin: .5rem 0 1rem;
+}
+.lead { font-size: 1.1rem; color: var(--muted); }
+.rules h3 {
+  font-family: var(--font-title);
+  font-weight: 600;
+  margin-top: 1.2rem;
+}
+.rules ul { list-style: none; padding: 0; margin: .6rem 0 1rem; }
+.rules li { display: flex; align-items: center; gap: .6rem; margin: .3rem 0; }
+.rules li span { font-family: var(--font-note); color: var(--silver); }
+
+.ritual-btn,
+a.ritual-btn {
+  display: inline-block;
+  text-decoration: none; /* quita subrayado en enlaces */
+  margin-top: 1rem;
+  background: linear-gradient(90deg, #7a0f1a, var(--accent) 60%, #7a0f1a);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;   /* tamaño compacto */
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: .02em;
+  box-shadow: 0 6px 16px rgba(177,18,38,.35);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.ritual-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.08), transparent);
+  transform: translateX(-100%);
+  animation: sweep 2.4s ease-in-out infinite;
+}
+
+.ritual-btn:hover {
+  filter: brightness(1.08);
+}
+
+/* Typed line */
+.typed {
+  font-family: var(--font-title);
+  font-style: italic;
+  margin-top: .8rem;
+  color: var(--fg);
+}
+.hidden { display: none; }
+
+/* Footer */
+.site-footer {
+  padding: 1.2rem;
+  text-align: center;
+  color: var(--silver);
+  border-top: 1px solid #151515;
+}
+
+/* Accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ================================
+   Responsive SOLO para móviles
+   ================================ */
+@media (max-width: 600px) {
+  /* Header NO fijo y centrado */
+  .site-header {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 0.8rem; /* menos alto */
+  }
+
+  .logo {
+    font-size: 1.4rem; /* más pequeño */
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Navegación en grid: 4 arriba, 3 abajo */
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .nav a {
+    text-align: center;
+    padding: 0.4rem;
+    font-size: 0.85rem; /* más pequeño */
+    border-radius: 6px;
+    margin: 0;
+  }
+
+  /* Main más pequeño */
+  .hero {
+    padding: 0.6rem; /* menos espacio alrededor */
+    display: block;
+    min-height: auto; /* elimina altura mínima forzada */
+  }
+
+  .frame {
+    width: 90%;       /* más estrecho que el ancho completo */
+    margin: 0 auto;
+    padding: 0.7rem;  /* menos padding interno */
+  }
+
+  /* Títulos y texto más pequeños */
+  .title {
+    font-size: 1.2rem; /* reducido */
+    margin-bottom: 0.6rem;
+  }
+  .lead,
+  p {
+    font-size: 0.8rem; /* más compacto */
+    line-height: 1.3;
+  }
+
+  /* Botones compactos */
+  .ritual-btn {
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.6rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Footer centrado y más compacto */
+  .site-footer {
+    text-align: center;
+    padding: 0.8rem;
+    font-size: 0.75rem;
+    background: rgba(15,15,15,.6);
+  }
+}

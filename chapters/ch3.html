@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Capítulo 3 — La prueba</title>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="stylesheet" href="../assets/css/grain.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="theme-dark">
+  <!-- Header con navegación -->
+  <header class="site-header">
+    <h1 class="logo">DESTINY NOTE</h1>
+    <nav class="nav">
+      <a href="../prologo.html">Prólogo</a>
+      <a href="ch1.html">Capítulo 1</a>
+      <a href="ch2.html">Capítulo 2</a>
+      <a href="ch3.html" class="active">Capítulo 3</a>
+      <a href="ch4.html">Capítulo 4</a>
+      <a href="ch5.html">Capítulo 5</a>
+      <a href="../epilogue.html">Epílogo</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="hero">
+    <article class="frame">
+      <h2 class="title">Capítulo 3 — La prueba</h2>
+      <p class="lead">
+        El cuaderno se abrió en una noche más oscura que las anteriores. Las páginas parecían
+        pesar, como si supieran que la historia estaba a punto de enfrentar su primera prueba.
+      </p>
+
+      <p>
+        Alejandro y Venezuela se miraron, conscientes de que no todo sería sencillo. La vida, con sus
+        dudas y silencios, se interponía como una sombra. ¿Podría la confianza resistir el miedo?
+        ¿Podría el amor vencer la incertidumbre?
+      </p>
+
+      <p>
+        Hubo un instante de silencio, un espacio donde las palabras no alcanzaban. El aire estaba
+        cargado de preguntas sin respuesta, y por un momento, la distancia pareció crecer entre ellos.
+        Pero en ese vacío, la mirada volvió a ser puente. Venezuela sostuvo su mano, y él entendió que
+        la prueba no era un obstáculo, sino una oportunidad para reafirmar lo que habían prometido
+        bajo la luna.
+      </p>
+
+      <p>
+        —“Tengo miedo de que un día todo cambie” —susurró Venezuela, bajando la mirada.  
+        —“Si cambia, lo enfrentaremos juntos. Eso es lo que nos hace fuertes” —respondió él, con firmeza.  
+      </p>
+
+      <p>
+        El cuaderno registró la escena con tinta invisible: no era la ausencia de dudas lo que
+        definía su historia, sino la decisión de enfrentarlas juntos. La prueba se convirtió en
+        un capítulo de fortaleza, un recordatorio de que el destino se escribe con valentía.
+      </p>
+
+      <p>
+        La noche, antes oscura, pareció iluminarse con esa certeza. El viento dejó de ser frío,
+        y la sombra se disipó. El cuaderno cerró sus páginas con un murmullo invisible:
+        “La confianza es la luz que disipa cualquier sombra.”
+      </p>
+
+      <!-- Frase final oculta -->
+      <blockquote id="finalQuote" class="typed hidden">
+        «La confianza es la luz que disipa cualquier sombra.»
+      </blockquote>
+
+      <!-- Botón para revelar la frase -->
+      <button class="ritual-btn" id="revealBtn">Revelar frase</button>
+
+      <!-- Botón para continuar al siguiente capítulo -->
+      <button class="ritual-btn" onclick="location.href='ch4.html'">Continuar</button>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <small>Capítulo 3 — La prueba superada.</small>
+  </footer>
+
+  <!-- Script para efecto de tipado -->
+  <script>
+    const revealBtn = document.getElementById('revealBtn');
+    const finalQuote = document.getElementById('finalQuote');
+
+    revealBtn.addEventListener('click', () => {
+      finalQuote.classList.remove('hidden');
+      typeLine(finalQuote.textContent);
+    });
+
+    function typeLine(text) {
+      finalQuote.textContent = "";
+      let i = 0;
+      const speed = 28;
+      const interval = setInterval(() => {
+        finalQuote.textContent += text[i];
+        i++;
+        if (i >= text.length) clearInterval(interval);
+      }, speed);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Epílogo — Eternidad</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/grain.css" />
+</head>
+<body class="theme-dark">
+  <!-- Header con navegación -->
+  <header class="site-header">
+    <h1 class="logo">DESTINY NOTE</h1>
+    <nav class="nav">
+      <a href="prologo.html">Prólogo</a>
+      <a href="chapters/ch1.html">Capítulo 1</a>
+      <a href="chapters/ch2.html">Capítulo 2</a>
+      <a href="chapters/ch3.html">Capítulo 3</a>
+      <a href="chapters/ch4.html">Capítulo 4</a>
+      <a href="chapters/ch5.html">Capítulo 5</a>
+      <a href="epilogue.html" class="active">Epílogo</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="hero">
+    <article class="frame">
+      <h2 class="title">Epílogo — Eternidad</h2>
+      <p class="lead">
+        El cuaderno se cerró lentamente, pero no era un final. Cada página escrita se convirtió
+        en un faro que iluminaba el camino hacia lo que aún estaba por venir. Alejandro y Venezuela
+        comprendieron que el destino no se limita a las palabras, sino que se expande en cada gesto,
+        cada mirada y cada amanecer compartido.
+      </p>
+
+      <p>
+        El invierno de 2026, la promesa bajo la luna, la prueba superada, el aniversario de 2027
+        y el primer Año Nuevo juntos eran ahora capítulos grabados en la eternidad. El cuaderno
+        brillaba como si cada recuerdo fuera una estrella en un cielo infinito.
+      </p>
+
+      <p>
+        No había cierre, solo continuidad. El cuaderno no dictaba un final, sino un comienzo eterno.
+        Cada palabra escrita era semilla de futuro, cada promesa cumplida era raíz de esperanza.
+      </p>
+
+      <p>
+        Alejandro miró a Venezuela y supo que el verdadero destino no estaba en las páginas,
+        sino en la vida que seguirían escribiendo juntos. El cuaderno era solo un reflejo,
+        un recordatorio de que lo más importante estaba en ellos.
+      </p>
+
+      <p>
+        El viento sopló suavemente, llevando consigo la última frase que el cuaderno quiso dejar:
+      </p>
+
+      <!-- Frase final oculta -->
+      <blockquote id="finalQuote" class="typed hidden">
+        «Nuestro destino no termina en un cuaderno. Comienza en cada amanecer que compartimos.»
+      </blockquote>
+
+    <!-- Botón para revelar la frase -->
+    <button class="ritual-btn" id="revealBtn">Revelar frase</button>
+
+    <!-- Botón para reiniciar la historia -->
+    <button class="ritual-btn" onclick="location.href='prologo.html'">Volver al inicio</button>
+
+    <!-- Botón para ver los créditos -->
+    <button class="ritual-btn" onclick="location.href='final.html'">Ver créditos finales</button>
+
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <small>Epílogo — La historia continúa más allá de las páginas.</small>
+  </footer>
+
+  <!-- Script para efecto de tipado -->
+  <script>
+    const revealBtn = document.getElementById('revealBtn');
+    const finalQuote = document.getElementById('finalQuote');
+
+    revealBtn.addEventListener('click', () => {
+      finalQuote.classList.remove('hidden');
+      typeLine(finalQuote.textContent);
+    });
+
+    function typeLine(text) {
+      finalQuote.textContent = "";
+      let i = 0;
+      const speed = 28;
+      const interval = setInterval(() => {
+        finalQuote.textContent += text[i];
+        i++;
+        if (i >= text.length) clearInterval(interval);
+      }, speed);
+    }
+  </script>
+</body>
+</html>

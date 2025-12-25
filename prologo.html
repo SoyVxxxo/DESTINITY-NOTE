@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Destiny Note — Prólogo</title>
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;600;700&family=Inter:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="assets/css/grain.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="theme-dark">
+  <!-- Header con logo y navegación -->
+  <header class="site-header">
+    <h1 class="logo">DESTINY NOTE</h1>
+    <nav class="nav">
+      <a href="prologo.html" class="active">Prólogo</a>
+      <a href="chapters/ch1.html">Capítulo 1</a>
+      <a href="chapters/ch2.html">Capítulo 2</a>
+      <a href="chapters/ch3.html">Capítulo 3</a>
+      <a href="chapters/ch4.html">Capítulo 4</a>
+      <a href="ch5.html">Capítulo 5</a>
+      <a href="epilogue.html">Epílogo</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="hero">
+    <div class="frame">
+      <h2 class="title">Prólogo</h2>
+      <p class="lead">
+        En la víspera del 25 de diciembre de 2026, un cuaderno oscuro apareció entre nosotros.
+        No era un Death Note para quitar vidas, sino un <strong>Destiny Note</strong> para escribir recuerdos.
+      </p>
+
+      <p>
+        Alejandro tenía 20 años, Venezuela 18. Dos años y tres meses habían pasado desde que el destino
+        los unió, y ahora el cuaderno se abría como un espejo de todo lo vivido. No dictaba muerte,
+        sino amor, promesas y futuro. Cada palabra escrita se volvía eterna, cada página era un reflejo
+        de lo que compartían.
+      </p>
+
+      <p>
+        El invierno envolvía la ciudad, las luces de navidad brillaban en las calles, y el aire
+        parecía contener un secreto. El cuaderno se abrió por primera vez, y en sus páginas invisibles
+        se grabaron las primeras reglas de su destino compartido.
+      </p>
+
+      <div class="rules">
+        <h3>Reglas del cuaderno</h3>
+        <ul>
+          <li><span>1.</span> Lo que se escribe, se recuerda.</li>
+          <li><span>2.</span> Lo que se promete, se cumple.</li>
+          <li><span>3.</span> Lo que se ama, crece.</li>
+        </ul>
+      </div>
+
+      <!-- Frase oculta arriba del botón -->
+      <p id="typedLine" aria-live="polite" class="typed hidden">
+        “El 25 escribimos ‘para siempre’.”
+      </p>
+
+      <!-- Botón para revelar la frase -->
+      <button class="ritual-btn" id="beginBtn">Escribir nuestro destino</button>
+
+      <!-- Botón para continuar al Capítulo 1 -->
+      <button class="ritual-btn" onclick="location.href='chapters/ch1.html'">Continuar</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <small>© Nuestra historia — 2 años y 3 meses de destino compartido (2026).</small>
+  </footer>
+
+  <!-- Script para efecto de tipado -->
+  <script>
+    const btn = document.getElementById('beginBtn');
+    const line = document.getElementById('typedLine');
+    btn.addEventListener('click', () => {
+      line.classList.remove('hidden');
+      typeLine(line.textContent);
+    });
+
+    function typeLine(text) {
+      const target = document.getElementById('typedLine');
+      target.textContent = "";
+      let i = 0;
+      const speed = 28;
+      const interval = setInterval(() => {
+        target.textContent += text[i];
+        i++;
+        if (i >= text.length) clearInterval(interval);
+      }, speed);
+    }
+  </script>
+</body>
+</html>
